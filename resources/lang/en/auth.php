@@ -35,6 +35,7 @@ return [
     "auth_failed" => "These credentials do not match our records.",
     "login_success" => "Logged in successfully.",
     "logout_success" => "Logged out successfully.",
+    "logout" => "Logout",
     "register_success" => "Signed up successfully.",
     "register_failed" => "Something was happen wrong.",
     "forgot_password" => "Forgot Password",
@@ -42,4 +43,6 @@ return [
     "forgot_password_desc" => "We will send you a link to reset password.",
     "submit" => "Submit",
     "verify_email" => "Verify Your Email Address",
+    "dashboard_greeting" => "Welcome!! :name",
+    "welcome" => "Welcome!",
 ];

@@ -31,6 +31,7 @@
             @yield('content')
         </div>
     @else
+        @includeIf('admin.partials._menu_list')
         @includeIf('admin.partials.header')
         <div class="page-wrap">
             @includeIf('admin.partials.app-sidebar')

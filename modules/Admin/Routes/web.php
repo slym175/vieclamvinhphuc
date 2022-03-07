@@ -11,8 +11,8 @@
 |
 */
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'canAccessAdmin']], function () {
-    Route::get('/', function () {
-        return 'This is the Admin module index page. Build something great!';
-    });
+use Modules\Admin\Http\Controllers\DashboardController;
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'canAccessAdmin'], 'as' => 'app.admin.'], function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 });

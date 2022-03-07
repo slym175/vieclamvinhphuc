@@ -7462,7 +7462,7 @@ body {
     margin-bottom: 30px
 }
 
-.wrapper .page-wrap .main-content .page-header .page-header-title i {
+.wrapper .page-wrap .main-content .page-header .page-header-title > i {
     float: left;
     width: 40px;
     height: 40px;

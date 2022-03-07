@@ -7,8 +7,11 @@
     "require": {
         "php": "^7.3|^8.0",
         "caffeinated/modules": "^6.3",
+        "cviebrock/eloquent-sluggable": "^8.0",
+        "diglactic/laravel-breadcrumbs": "^7.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "hashids/hashids": "^4.1",
         "laravel/framework": "^8.75",
         "laravel/legacy-factories": "^1.3",
         "laravel/sanctum": "^2.11",
@@ -33,7 +36,8 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "app/Helpers/routes.php"
+            "app/Helpers/routes.php",
+            "app/Helpers/users.php"
         ]
     },
     "autoload-dev": {

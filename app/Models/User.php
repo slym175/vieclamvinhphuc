@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
@@ -20,6 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
+        'encode_id',
         'name',
         'username',
         'email',
@@ -58,10 +60,12 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * Set the user's first name.
      *
-     * @param  string  $value
+     * @param string $value
      * @return void
      */
-    public function setUsernameAttribute($value) {
-        $this->attributes['username'] = Str::slug(strtolower($value),'_');
+    public function setUsernameAttribute($value)
+    {
+        if (!isset($this->attributes['username']) || $this->attributes['username'] == null)
+            $this->attributes['username'] = Str::slug(strtolower($value), '_');
     }
 }
