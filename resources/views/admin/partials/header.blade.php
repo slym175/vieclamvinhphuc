@@ -85,7 +85,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <span class="p5 pl-15 pr-15 d-block">
                             <i class="ik ik-user mr-10"></i>{{ trans('auth.welcome') }}
-                            <br><strong class="text-decoration-underline">{{ auth()->user()->name }}</strong>
+                            <br><span>{{ auth()->user()->name }}</span>
                         </span>
                         <div class="divider"></div>
                         <a class="dropdown-item" href="{{ route_check('app.admin.profile.index') }}">

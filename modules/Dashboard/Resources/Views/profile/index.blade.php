@@ -9,7 +9,7 @@
                     <div class="page-header-title">
                         <i class="ik ik-layers bg-blue"></i>
                         <div class="d-inline">
-                            <h5>Dashboard</h5>
+                            <h5>{{ auth()->user()->name }}'s Profile</h5>
                             <span>{{ Breadcrumbs::render('admin.profile') }}</span>
                         </div>
                     </div>
