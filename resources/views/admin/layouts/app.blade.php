@@ -46,7 +46,6 @@
         </div>
         @includeIf('admin.partials.app-modal')
     @endif
-    @php session()->forget('is_auth_view') @endphp
 </div>
 <script src="{{ asset('assets/admin/libs/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/admin/libs/angularjs/angular.min.js') }}"></script>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Admin\Providers;
+namespace Modules\Dashboard\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Modules\Admin\Http\Controllers';
+    protected $namespace = 'Modules\Dashboard\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -55,7 +55,7 @@ class RouteServiceProvider extends ServiceProvider
             'middleware' => 'web',
             'namespace'  => $this->namespace,
         ], function ($router) {
-            require module_path('admin', 'Routes/web.php', 'app');
+            require module_path('dashboard', 'Routes/web.php', 'app');
         });
     }
 
@@ -73,7 +73,7 @@ class RouteServiceProvider extends ServiceProvider
             'namespace'  => $this->namespace,
             'prefix'     => 'api',
         ], function ($router) {
-            require module_path('admin', 'Routes/api.php', 'app');
+            require module_path('dashboard', 'Routes/api.php', 'app');
         });
     }
 }

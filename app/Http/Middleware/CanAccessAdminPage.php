@@ -18,6 +18,7 @@ class CanAccessAdminPage
     public function handle(Request $request, Closure $next)
     {
         if (auth()->user()->hasRole('super-admin') == 'admin' || auth()->user()->hasPermissionTo('access admin')) {
+            $request->session()->forget('is_auth_view');
             auth()->user()->createToken('Access Admin Feature Token', ['can-access-admin']);
             return $next($request);
         }

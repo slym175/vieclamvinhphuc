@@ -5,11 +5,11 @@
                 @if ($breadcrumb->url && !$loop->last)
                     <li class="breadcrumb-item">
                         <a href="{{ $breadcrumb->url }}">
-                            {{ ($loop->first && ($breadcrumb->title == "Home" || $breadcrumb->title == "Dashboard")) ? '<i class="ik ik-home"></i>' : $breadcrumb->title }}
+                            {!! ($loop->first && ($breadcrumb->title == "Home" || $breadcrumb->title == "Dashboard")) ? '<i class="ik ik-home"></i>' : $breadcrumb->title !!}
                         </a>
                     </li>
                 @else
-                    <li class="breadcrumb-item active">{{ $breadcrumb->title }}</li>
+                    <li class="breadcrumb-item active">{!! $breadcrumb->title !!}</li>
                 @endif
             @endforeach
         </ol>

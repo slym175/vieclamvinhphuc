@@ -13,6 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/admin', function (Request $request) {
-    // return $request->admin();
+Route::get('/dashboard', function (Request $request) {
+    // return $request->dashboard();
 })->middleware('auth:api');
