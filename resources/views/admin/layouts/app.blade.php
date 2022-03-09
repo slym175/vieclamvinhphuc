@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/css/theme.min.css') }}">
     <script src="{{ asset('assets/admin/libs/modernizr/modernizr-2.8.3.min.js') }}"></script>
     @stack('css')
-    @stack('js_defer')
 </head>
 <body>
 <div id="loading">

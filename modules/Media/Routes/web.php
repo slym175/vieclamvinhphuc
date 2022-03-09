@@ -11,6 +11,8 @@
 |
 */
 
-Route::group(['prefix' => 'media', 'middleware' => ['web', 'auth', 'canAccessAdmin']], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
+use UniSharp\LaravelFilemanager\Lfm;
+
+Route::group(['prefix' => 'media', 'middleware' => ['web', 'auth']], function () {
+    Lfm::routes();
 });

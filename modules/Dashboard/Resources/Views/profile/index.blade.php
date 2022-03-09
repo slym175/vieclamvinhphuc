@@ -25,5 +25,4 @@
 @endsection
 
 @push('css') @endpush
-@push('js_defer') @endpush
 @push('js') @endpush
