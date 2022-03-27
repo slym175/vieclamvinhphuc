@@ -15,14 +15,12 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "hashids/hashids": "^4.1",
-        "intervention/image": "^2.7",
         "laravel/framework": "^8.75",
         "laravel/legacy-factories": "^1.3",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
-        "spatie/laravel-permission": "^5.5",
-        "unisharp/laravel-filemanager": "^2.4"
+        "spatie/laravel-permission": "^5.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

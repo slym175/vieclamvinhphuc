@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'tools' => 'Tools',
     'dashboard' => 'Dashboard',
-    'media' => 'Media'
+    'media' => 'Media',
+    'location' => 'Location',
+    'settings' => 'Settings',
 ];

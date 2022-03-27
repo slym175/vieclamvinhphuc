@@ -20,3 +20,8 @@ Breadcrumbs::for('admin.profile', function (BreadcrumbTrail $trail) {
     $trail->parent('admin');
     $trail->push('Profile', route_check('app.admin.profile.index'));
 });
+
+Breadcrumbs::for('admin.location', function (BreadcrumbTrail $trail) {
+    $trail->parent('admin');
+    $trail->push('Location', route_check('app.admin.location.index'));
+});

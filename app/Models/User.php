@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
+use Modules\Dashboard\Models\UserMeta;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -67,5 +68,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         if (!isset($this->attributes['username']) || $this->attributes['username'] == null)
             $this->attributes['username'] = Str::slug(strtolower($value), '_');
+    }
+
+    public function user_meta()
+    {
+        $this->hasOne(UserMeta::class);
     }
 }

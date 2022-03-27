@@ -1,5 +1,10 @@
 require('./bootstrap');
 
+jQuery(document).ready(function () {
+    if (jQuery('.perfect-scrollbar'))
+        new PerfectScrollbar('.perfect-scrollbar')
+})
+
 if (ngAppWrapper) {
     ngAppWrapper.controller('ngAuthController', ["$scope", "$http", "AppGlobalData", "toaster", function ($scope, $http, AppGlobalData, toaster) {
         $scope.authData = {
@@ -29,18 +34,18 @@ if (ngAppWrapper) {
                 $scope.loading = true;
                 $http({
                     method: "POST",
-                    url: AppGlobalData.API_URL+"/api/v1/login",
+                    url: AppGlobalData.API_URL + "/api/v1/login",
                     data: $scope.authData,
                     headers: {
                         'Content-Type': 'application/json'
                     }
-                }).then(function(response) {
-                    if(response.data && (response.data.errors || response.data.code === 500)) {
+                }).then(function (response) {
+                    if (response.data && (response.data.errors || response.data.code === 500)) {
                         for (const [key, value] of Object.entries(response.data.errors)) {
                             $scope.authErrors[key] = Array.isArray(value) && value.length ? value.shift() : value;
                         }
                     }
-                    if(response.data && response.data.code === 200) {
+                    if (response.data && response.data.code === 200) {
                         localStorage.setItem('_access_token', response.data.token)
                         toaster('', response.data.message, 'success', {
                             afterHidden: () => {
@@ -49,7 +54,7 @@ if (ngAppWrapper) {
                         });
                     }
                     $scope.loading = false;
-                }, function(response) {
+                }, function (response) {
                     console.log(response);
                     $scope.loading = false;
                 });
@@ -58,15 +63,15 @@ if (ngAppWrapper) {
                 $scope.loading = true;
                 $http({
                     method: "post",
-                    url: AppGlobalData.API_URL+"/api/v1/register",
+                    url: AppGlobalData.API_URL + "/api/v1/register",
                     data: $scope.authData
-                }).then(function(response) {
-                    if(response.data && (response.data.errors || response.data.code === 500)) {
+                }).then(function (response) {
+                    if (response.data && (response.data.errors || response.data.code === 500)) {
                         for (const [key, value] of Object.entries(response.data.errors)) {
                             $scope.authErrors[key] = Array.isArray(value) && value.length ? value.shift() : value;
                         }
                     }
-                    if(response.data && response.data.code === 200) {
+                    if (response.data && response.data.code === 200) {
                         toaster('', response.data.message, 'success', {
                             afterHidden: () => {
                                 window.location.href = response.data.redirect;
@@ -74,7 +79,7 @@ if (ngAppWrapper) {
                         });
                     }
                     $scope.loading = false;
-                }, function(response) {
+                }, function (response) {
                     console.log(response);
                     $scope.loading = false;
                 });
